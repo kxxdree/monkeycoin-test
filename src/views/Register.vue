@@ -1,5 +1,5 @@
 <template>
-    <div class="auth__page">
+    <div>
         <header-vue></header-vue>
         <div class="home-page__header">
             <router-link to="/signin" class="home-page__header_button_router">
@@ -18,7 +18,7 @@
                 <button @click.prevent="sendForm" class="auth__sign-button">Зарегистрироваться</button>
             </form>
         </div>
-        <footer-vue></footer-vue>
+        <!-- <footer-vue></footer-vue> -->
     </div>
 </template>
 
@@ -58,15 +58,12 @@ export default {
 </script>
 
 <style lang="scss">
-.auth__page {
-    background-color: #0D1017;
-}
 
 .auth__container-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 50%;
     margin: auto;
 }
 
