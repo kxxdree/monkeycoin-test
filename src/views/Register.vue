@@ -77,18 +77,18 @@ export default {
     margin-top: 2rem;
 }
 
-.auth-page__subtitle {
-    font-size: 2rem;
-    margin: 1rem 0 3rem;
-    text-decoration: none;
-    height: 3rem;
+// .auth-page__subtitle {
+//     font-size: 2rem;
+//     margin: 1rem 0 3rem;
+//     text-decoration: none;
+//     height: 3rem;
 
-    &_link {
-        text-decoration: none;
-        color: white;
-        opacity: .5;
-    }
-}
+//     &_link {
+//         text-decoration: none;
+//         color: white;
+//         opacity: .5;
+//     }
+// }
 
 .auth-page__subtitle:hover {
     opacity: .5;

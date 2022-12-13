@@ -10,7 +10,7 @@ import MainLogIn from './views/MainLogIn.vue'
 import SignInVue from './views/SignIn.vue';
 
 export default {
-  components: { Register, MainLogIn, SignInVue},
+  components: { Register, MainLogIn, SignInVue },
 
 }
 </script>

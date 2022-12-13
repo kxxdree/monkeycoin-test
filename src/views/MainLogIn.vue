@@ -174,21 +174,24 @@ export default {
     font-size: 2rem;
     margin-top: 1.5rem;
     margin-left: 11.5rem;
-    width: 70rem;
+    margin-right: 11.5rem;
+    max-width: 75rem;
 }
 
 .main-login__container {
     margin-left: 11.5rem;
+    margin-right: 11.5rem;
     margin-top: 3rem;
-    max-width: 70rem;
+    max-width: 75rem;
 
     &_info {
         background-color: #17191F;
         color: white;
-        width: 70rem;
+        max-width: 75rem;
         display: flex;
         justify-content: space-between;
         font-weight: 700;
+        font-size: 1.5rem;
 
         &_text {
             background: none;
@@ -204,7 +207,7 @@ export default {
     color: white;
     display: flex;
     justify-content: space-between;
-    width: 70rem;
+    max-width: 75rem;
     margin-bottom: 3rem;
     margin-top: 2rem;
 
@@ -214,6 +217,7 @@ export default {
         justify-content: center;
         align-content: center;
         text-align: center;
+        font-size: 1.5rem;
     }
 }
 </style>

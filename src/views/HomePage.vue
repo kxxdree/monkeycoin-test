@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-page">
     <HeaderVue></HeaderVue>
     <div class="home-page__header">
       <router-link to="/signin" class="home-page__header_button_router">
@@ -58,6 +58,11 @@ export default {
 </script>
 
 <style lang="scss">
+
+.home-page {
+  position: relative;
+}
+
 .home-page__header {
   width: 10rem;
   height: 3rem;
@@ -162,6 +167,8 @@ export default {
   background-color: #F18A2D;
   cursor: pointer;
   border: none;
+  width: 37rem;
+  font-size: 3rem;
 }
 
 .main__container_form_button:hover {
