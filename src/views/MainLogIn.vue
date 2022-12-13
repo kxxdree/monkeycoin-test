@@ -18,20 +18,16 @@
         <div class="main-login__container">
             <div class="main-login__container_info">
                 <p class="main-login__container_info_text">Код валюты</p>
-                <!-- <img class="main-login__container_info_text_logo" src="../assets/images/Arrow 2.svg" alt="Arrow"> -->
                 <p class="main-login__container_info_text">Наименование валюты</p>
-                <!-- <img class="main-login__container_info_text_logo" src="../assets/images/Arrow 2.svg" alt="Arrow"> -->
                 <p class="main-login__container_info_text">Цена за 1 Bitcoin</p>
-                <!-- <img class="main-login__container_info_text_logo" src="../assets/images/Arrow 2.svg" alt="Arrow"> -->
                 <p class="main-login__container_info_text">Символ валюты</p>
-                <!-- <img class="main-login__container_info_text_logo" src="../assets/images/Arrow 2.svg" alt="Arrow"> -->
             </div>
 
             <div v-for="item in prices.bpi" :key="item.id" class="main-login__container_back-data">
-                <span>{{ item.code }}</span>
-                <span>{{ item.description }}</span>
-                <span style="color: #005600">{{ item.rate }}</span>
-                <span>{{ item.symbol }}</span>
+                <span class="main-login__container_back-data_span">{{ item.code }}</span>
+                <span class="main-login__container_back-data_span">{{ item.description }}</span>
+                <span style="color: #005600" class="main-login__container_back-data_span">{{ item.rate }}</span>
+                <span class="main-login__container_back-data_span">{{ item.symbol }}</span>
             </div>
         </div>
         <popupComponent v-if="isInfoPopupVisible" @openPopup="openPopup" />
@@ -163,7 +159,7 @@ export default {
 .main-login__title {
     color: white;
     font-size: 3rem;
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
     margin-left: 11.5rem;
 }
 
@@ -172,11 +168,13 @@ export default {
     font-size: 2rem;
     margin-top: 1.5rem;
     margin-left: 11.5rem;
+    width: 70rem;
 }
 
 .main-login__container {
     margin-left: 11.5rem;
     margin-top: 3rem;
+    max-width: 70rem;
 
     &_info {
         background-color: #17191F;
@@ -190,12 +188,8 @@ export default {
             background: none;
             margin: auto 0;
             padding: 2px;
-
-            &_logo {
-                background: none;
-                margin: auto 10rem auto 1rem;
-                width: 1rem;
-            }
+            width: 10rem;
+            text-align: center;
         }
     }
 }
@@ -207,5 +201,13 @@ export default {
     width: 70rem;
     margin-bottom: 3rem;
     margin-top: 2rem;
+
+    &_span {
+        display: flex;
+        width: 10rem;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+    }
 }
 </style>
