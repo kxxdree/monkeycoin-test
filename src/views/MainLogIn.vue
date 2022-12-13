@@ -3,7 +3,7 @@
         <header-vue></header-vue>
         <div class="main-login__balance">
             <input v-if="balanceVisible" type="number" v-model="balance" :placeholder="balance" />
-            <p v-else-if="balance == null" class="main-login__balance_input">0.0 р</p>
+            <p v-else-if="balance == null" class="main-login__balance_input">Баланс: 0.0 р</p>
             <p v-else>{{ balance }}</p>
             <button @click="openBalance" class="main-login__balance_button">Пополнить</button>
         </div>
@@ -84,6 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 .main-login__balance {
     background-color: #17191F;
     width: 20rem;
