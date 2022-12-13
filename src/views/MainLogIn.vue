@@ -31,18 +31,23 @@
             </div>
         </div>
         <popupComponent v-if="isInfoPopupVisible" @openPopup="openPopup" />
+        <footer-vue></footer-vue>
     </div>
 </template>
 
 <script>
 import popupComponent from '../components/popupComponent.vue'
 import HeaderVue from '@/components/Header.vue';
+import FooterVue from '@/components/Footer.vue';
+
 import axios from 'axios'
+
 export default {
 
     components: {
         popupComponent,
-        HeaderVue
+        HeaderVue,
+        FooterVue
     },
 
     data() {

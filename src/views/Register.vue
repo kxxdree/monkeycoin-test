@@ -1,10 +1,16 @@
 <template>
     <div class="auth__page">
+        <header-vue></header-vue>
+        <div class="home-page__header">
+            <router-link to="/signin" class="home-page__header_button_router">
+                <button class="home-page__header_button">Войти</button>
+            </router-link>
+        </div>
         <div class="auth__container-page">
             <h1 class="auth-page__title">Регистрация</h1>
-            <p class="auth-page__subtitle">
+            <!-- <p class="auth-page__subtitle">
                 <router-link to="/signin" class="auth-page__subtitle_link">Есть аккаунт?</router-link>
-            </p>
+            </p> -->
             <form action="#" class="auth__form">
                 <input v-model="userName" type="text" class="auth__input" placeholder="Имя пользователя" required>
                 <input v-model="userEmail" type="email" class="auth__input" placeholder="Email" required>
@@ -12,14 +18,22 @@
                 <button @click.prevent="sendForm" class="auth__sign-button">Зарегистрироваться</button>
             </form>
         </div>
+        <footer-vue></footer-vue>
     </div>
 </template>
 
 <script>
+import HeaderVue from '@/components/Header.vue';
+import FooterVue from '@/components/Footer.vue';
 
 import axios from 'axios'
 
 export default {
+    components: {
+        HeaderVue,
+        FooterVue
+    },
+
     data() {
         return {
             userName: '',
@@ -86,6 +100,7 @@ export default {
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
+    margin-top: 2rem;
 }
 
 .auth__input {

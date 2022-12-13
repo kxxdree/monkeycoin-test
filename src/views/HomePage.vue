@@ -38,12 +38,7 @@
           <img class="main__container_item_logo" src="../assets/images/image 3.jpg" alt="Лого">
         </div>
       </div>
-    </div>
-    <div class="main__footer">
-      <div class="main__footer_container">
-        <p class="main__footer_container_text">© MonkeyCode</p>
-        <p class="main__footer_container_text">Немного о нас</p>
-      </div>
+      <footer-vue></footer-vue>
     </div>
   </div>
 </template>
@@ -51,17 +46,18 @@
 <script>
 
 import HeaderVue from '@/components/Header.vue';
+import FooterVue from '@/components/Footer.vue';
 
 export default {
   name: 'HomePage',
   components: {
-    HeaderVue
+    HeaderVue,
+    FooterVue
   }
 }
 </script>
 
 <style lang="scss">
-
 .home-page__header {
   width: 10rem;
   height: 3rem;
@@ -171,29 +167,5 @@ export default {
 .main__container_form_button:hover {
   opacity: .8;
   transition: .2s;
-}
-
-.main__footer {
-  display: flex;
-  margin-top: 3rem;
-  height: 3rem;
-  background-color: #17191F;
-
-
-  &_container {
-    display: flex;
-    justify-content: space-between;
-    margin: auto 10rem;
-    width: 100%;
-    background-color: #17191F;
-
-
-    &_text {
-      color: white;
-      opacity: .2;
-      font-size: 1rem;
-      background: none;
-    }
-  }
 }
 </style>
