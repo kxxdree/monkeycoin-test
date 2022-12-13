@@ -1,16 +1,13 @@
 <template>
-    <div class="main-login">
-        <div class="main__header">
-            <router-link to="/" class="main__header_logo"><img style="width: 3rem; background-color: #17191F;" src="../assets/images/logo 1.svg"
-                    alt="Лого"></router-link>
-            <input v-model="searchForCurrency" class="main__header_input" type="text" placeholder="Найти валюту">
-            <div class="main-login__balance">
-                <input v-if="balanceVisible" type="number" v-model="balance" :placeholder="balance" />
-                <p v-else-if="balance == null">Ваш кошелек пуст</p>
-                <p v-else>{{ balance }}</p>
-                <button @click="openBalance" class="main-login__header_button">Пополнить</button>
-            </div>
+    <div>
+        <header-vue></header-vue>
+        <div class="main-login__balance">
+            <input v-if="balanceVisible" type="number" v-model="balance" :placeholder="balance" />
+            <p v-else-if="balance == null" class="main-login__balance_input">0.0 р</p>
+            <p v-else>{{ balance }}</p>
+            <button @click="openBalance" class="main-login__balance_button">Пополнить</button>
         </div>
+        <!-- </div> -->
         <div class="main-login__sale-buttons">
             <button @click="openPopup" class="main-login__buy-button login-btn">Купить</button>
             <button @click="openPopup" class="main-login__sale-button login-btn">Продать</button>
@@ -33,7 +30,7 @@
             <div v-for="item in prices.bpi" :key="item.id" class="main-login__container_back-data">
                 <span>{{ item.code }}</span>
                 <span>{{ item.description }}</span>
-                <span style="color:green">{{ item.rate }}</span>
+                <span style="color: #005600">{{ item.rate }}</span>
                 <span>{{ item.symbol }}</span>
             </div>
         </div>
@@ -43,11 +40,13 @@
 
 <script>
 import popupComponent from '../components/popupComponent.vue'
+import HeaderVue from '@/components/Header.vue';
 import axios from 'axios'
 export default {
 
     components: {
-        popupComponent
+        popupComponent,
+        HeaderVue
     },
 
     data() {
@@ -91,37 +90,28 @@ export default {
 <style lang="scss">
 .main-login__balance {
     background-color: #17191F;
-}
-
-.main__header {
-    height: 5rem;
-    background-color: #17191F;
+    width: 20rem;
+    height: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 8rem;
+    border-radius: 0.75rem;
     display: flex;
 
-
-    &_logo {
-        background: none;
-        width: 3rem;
-        margin-left: 10rem;
+    &_input {
+        margin-right: 50px;
+        color: white;
+        width: 10rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-.main__header_input {
-    height: 3rem;
-    width: 18rem;
-    margin: auto auto auto 3rem;
-    color: rgb(255, 255, 255, .4);
-    padding: 1rem;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-}
-
-.main-login__header_button {
+.main-login__balance_button {
     height: 3rem;
     width: 10rem;
-    margin: auto;
-    margin-right: 8rem;
     font-size: 1.25rem;
     color: #FFB800;
     border: none;
@@ -130,7 +120,7 @@ export default {
     font-family: 'Comic Neue', cursive;
 }
 
-.main-login__header_button:hover {
+.main-login__balance_button:hover {
     opacity: .7;
     transition: .2s;
 }

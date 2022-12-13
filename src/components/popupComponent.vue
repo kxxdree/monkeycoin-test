@@ -1,15 +1,19 @@
 <template>
     <div class="modal-shadow" @click.self="closePopup">
         <div class="popup">
-            <div class="popup__header">
-                <h3 class="popup__title">Выберите желаемое количество</h3>
-            </div>
+            <h3 class="popup__title">Выберите желаемое количество</h3>
             <div class="popup__footer">
-                <label for="btc"><input v-model="btc" type="number" min="0" @change="ConvertBtc" name="btc" class="">
-                    Bitcoin</label>
+                <label for="btc">
+                    <input v-model="btc" type="number" min="0" @change="ConvertBtc" name="btc"
+                        class="popup__footer_btc popup__footer_input">
+                    Bitcoin
+                </label>
 
-                <label for="rub"><input v-model="rub" type="number" min="0" @change="ConvertRub" name="rub"
-                        class="">Рубли</label>
+                <label for="rub">
+                    <input v-model="rub" type="number" min="0" @change="ConvertRub" name="rub"
+                        class="popup__footer_rub popup__footer_input">
+                    Рубли
+                </label>
             </div>
         </div>
     </div>
@@ -46,16 +50,7 @@ export default {
 <style lang="scss" scoped>
 * {
     background-color: #ffffff;
-}
-
-@media screen and (max-width: 853px) {
-    .header_submit_button {
-        width: 100%;
-    }
-
-    .header_inputs {
-        width: 100%;
-    }
+    color: #17191F;
 }
 
 .modal-shadow {
@@ -68,61 +63,31 @@ export default {
 }
 
 .popup {
-    padding: 1.25rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20%;
-    background: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.7);
-    z-index: 99;
+    // width: 45%;
+    padding: 1.25rem;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    height: 20%;
-    border-radius: 0.4rem;
-    display: flex;
     justify-content: space-between;
-    height: auto;
+    border-radius: 0.5rem;
+    font-size: 1rem;
 
-    &body {
-        overflow: hidden;
-    }
-
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex: 0 0 auto;
-        background-color: #ffffff;
-    }
-
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #ffffff;
+    &__title {
+        margin-bottom: 1rem;
     }
 }
 
-.footer {
+.popup__footer {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-}
 
-.popup__close {
-    cursor: pointer;
-}
-
-@media screen and (max-width: 853px) {
-    .popup {
-        width: 100%;
-        height: 100%;
-    }
-
-    .modal-shadow {
-        background: #ffffff;
+    &_input {
+        outline: none;
     }
 }
 </style>
